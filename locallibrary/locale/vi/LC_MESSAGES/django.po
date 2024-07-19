@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-07-29 13:25+0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+#: locallibrary/templates/registration/logged_out.html:5
+msgid "Logged out!"
+msgstr ""
+
+#: locallibrary/templates/registration/logged_out.html:6
+msgid "Click here to login again."
+msgstr ""
+
+#: locallibrary/templates/registration/login.html:6
+msgid "Your username and password didn't match. Please try again."
+msgstr ""
+
+#: locallibrary/templates/registration/login.html:14
+msgid "Please login to see this page."
+msgstr ""
+
+#: locallibrary/templates/registration/login.html:30
+msgid "login"
+msgstr ""
+
+#: locallibrary/templates/registration/login.html:35
+msgid "Lost password?"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:5
+msgid "Please enter (and confirm) your new password."
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:11
+msgid "New password:"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:16
+msgid "Confirm password:"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:21
+msgid "Change my password"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:26
+msgid "Password reset failed"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_confirm.html:27
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_done.html:5
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_email.html:3
+#, python-format
+msgid ""
+"Someone asked for password reset for email %(email)s. Follow the link below:"
+msgstr ""
+
+#: locallibrary/templates/registration/password_reset_form.html:11
+msgid "Reset password"
+msgstr ""
