@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 from django.utils.translation import gettext_lazy as _ # Update i18n standard
+from datetime import date
 import uuid
 
 class Genre(models.Model):
@@ -60,6 +61,7 @@ class BookInstance(models.Model):
     book = models.ForeignKey('Book', on_delete=models.RESTRICT)
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
+    creation_date = models.DateField(default=date.today) # Ngay tao ban copy
 
     class BookStatus(models.TextChoices):
         MAINTENANCE = ('m', _('Maintenance'))
