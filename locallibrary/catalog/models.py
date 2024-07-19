@@ -61,19 +61,16 @@ class BookInstance(models.Model):
     imprint = models.CharField(max_length=200)
     due_back = models.DateField(null=True, blank=True)
 
-    LOAN_STATUS = (
-        ('m', 'Maintenance'),
-        ('o', 'On loan'),
-        ('a', 'Available'),
-        ('r', 'Reserved'),
-    )
+    class BookStatus(models.TextChoices):
+        MAINTENANCE = ('m', _('Maintenance'))
+        ON_LOAN = ('o', _('On loan'))
+        AVAILABLE = ('a', _('Available'))
+        RESERVED = ('r', _('Reserved'))
 
     status = models.CharField(
         max_length=1,
-        choices=LOAN_STATUS,
-        blank=True,
-        default='m',
-        help_text=_('Book availability'),
+        choices=BookStatus.choices,
+        default=BookStatus.AVAILABLE,
     )
     # Chi dinh cac ban ghi se duoc sap xep theo truong 'due_back'
     class Meta:
