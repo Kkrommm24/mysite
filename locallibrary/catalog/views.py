@@ -3,7 +3,8 @@ from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
 from django.views import generic
 from django.shortcuts import get_object_or_404
-from .constants import ITEMS_PER_PAGE  
+from .constants import ITEMS_PER_PAGE, BOOKINSTANCE_LIST_BORROWED_USER_PER_PAGE
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 def book_detail_view(request, pk):
     # Lay thong tin cuon sach tu csdl dua vao id, neu khong ton tai thi tra ve 404
@@ -62,4 +63,16 @@ class BookListView(generic.ListView):
 class BookDetailView(generic.DetailView):
     model = Book
 
+class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView):
+    """Generic class-based view listing books on loan to current user."""
+    model = BookInstance
+    template_name = 'catalog/bookinstance_list_borrowed_user.html'
+    paginate_by = BOOKINSTANCE_LIST_BORROWED_USER_PER_PAGE
 
+    def get_queryset(self):
+        return (
+            BookInstance.objects.filter(borrower=self.request.user)
+            .filter(status__exact='o')
+            .select_related('book')
+            .order_by('due_back')
+        )

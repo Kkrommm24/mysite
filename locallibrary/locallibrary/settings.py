@@ -60,7 +60,7 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,9 +120,18 @@ LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
+LANGUAGES = [
+    ('en', 'English'),
+    ('vi', 'Vietnamese'),
+    # Thêm các ngôn ngữ khác nếu cần
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
@@ -133,3 +142,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
